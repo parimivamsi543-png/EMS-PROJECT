@@ -1,6 +1,6 @@
 import React from 'react';
 import { useQuery } from 'react-query';
-import { User, Mail, Phone, MapPin, Briefcase, Building2, Calendar, DollarSign, Shield } from 'lucide-react';
+import { User, Mail, Phone, MapPin, Briefcase, Building2, Calendar, IndianRupee, Shield } from 'lucide-react';
 import { useAuth } from '../contexts/AuthContext';
 import { getEmployee } from '../services/api';
 
@@ -162,7 +162,7 @@ const Profile = () => {
                 </div>
                 
                 <div className="flex items-start">
-                  <DollarSign className="h-5 w-5 text-gray-400 mr-3 mt-0.5" />
+                  <IndianRupee className="h-5 w-5 text-gray-400 mr-3 mt-0.5" />
                   <div>
                     <p className="text-sm font-medium text-gray-500">Salary</p>
                     <p className="text-base text-gray-900">

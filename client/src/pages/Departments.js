@@ -8,7 +8,7 @@ import {
   Trash2, 
   Building2,
   Users,
-  DollarSign
+  IndianRupee
 } from 'lucide-react';
 import { getDepartments, deleteDepartment } from '../services/api';
 
@@ -132,7 +132,7 @@ const Departments = () => {
               <div className="space-y-2">
                 {department.budget && (
                   <div className="flex items-center text-sm text-gray-600">
-                    <DollarSign className="h-4 w-4 mr-2" />
+                    <IndianRupee className="h-4 w-4 mr-2" />
                     <span>Budget: ₹{department.budget.toLocaleString()}</span>
                   </div>
                 )}

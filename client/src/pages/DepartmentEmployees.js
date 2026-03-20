@@ -1,7 +1,7 @@
 import React from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { useQuery } from 'react-query';
-import { ArrowLeft, User, Mail, Phone, Building2, Briefcase, DollarSign, Calendar } from 'lucide-react';
+import { ArrowLeft, User, Mail, Phone, Building2, Briefcase, IndianRupee, Calendar } from 'lucide-react';
 import { getDepartment, getDepartmentEmployees } from '../services/api';
 
 const DepartmentEmployees = () => {
@@ -122,7 +122,7 @@ const DepartmentEmployees = () => {
                   )}
                   {employee.salary && (
                     <div className="flex items-center text-sm text-gray-600">
-                      <DollarSign className="h-4 w-4 mr-2 text-gray-400" />
+                      <IndianRupee className="h-4 w-4 mr-2 text-gray-400" />
                       <span>₹{employee.salary.toLocaleString()}</span>
                     </div>
                   )}

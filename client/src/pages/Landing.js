@@ -47,7 +47,7 @@ const Landing = () => {
 
   const stats = [
     { label: 'Active Users', value: '10,000+' },
-    { label: 'Companies', value: '500+' },
+    { label: 'Colleges', value: '500+' },
     { label: 'Employees Managed', value: '1M+' },
     { label: 'Uptime', value: '99.9%' }
   ];
@@ -94,8 +94,8 @@ const Landing = () => {
               <span className="text-blue-600">Effortlessly</span>
             </h1>
             <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
-              The most comprehensive employee management system designed for modern businesses. 
-              Streamline HR processes, boost productivity, and make data-driven decisions.
+              The most comprehensive employee management system designed for modern businesses.
+              Streamline workforce processes, boost productivity, and make data-driven decisions.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link
@@ -140,7 +140,7 @@ const Landing = () => {
               Everything You Need to Manage Employees
             </h2>
             <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              Powerful features designed to simplify HR management and boost team productivity.
+              Powerful features designed to simplify workforce operations and boost team productivity.
             </p>
           </div>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
@@ -168,10 +168,10 @@ const Landing = () => {
       <div className="bg-gradient-to-r from-blue-600 to-purple-600 py-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-            Ready to Transform Your HR Management?
+            Ready to Transform Your Workforce?
           </h2>
           <p className="text-xl text-blue-100 mb-8 max-w-2xl mx-auto">
-            Join thousands of companies already using our platform to manage their workforce efficiently.
+            Join thousands of colleges already using our platform to manage their institutions efficiently.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link

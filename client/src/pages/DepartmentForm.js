@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useQuery, useMutation, useQueryClient } from 'react-query';
-import { ArrowLeft, Save, Building2, DollarSign, MapPin } from 'lucide-react';
+import { ArrowLeft, Save, Building2, IndianRupee, MapPin } from 'lucide-react';
 import { getDepartment, createDepartment, updateDepartment, getEmployees } from '../services/api';
 
 const DepartmentForm = () => {
@@ -169,7 +169,7 @@ const DepartmentForm = () => {
         {/* Financial Information */}
         <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
           <div className="flex items-center mb-6">
-            <DollarSign className="h-5 w-5 text-primary-600 mr-2" />
+            <IndianRupee className="h-5 w-5 text-primary-600 mr-2" />
             <h2 className="text-lg font-medium text-gray-900">Financial Information</h2>
           </div>
           
@@ -179,7 +179,7 @@ const DepartmentForm = () => {
                 Budget
               </label>
               <div className="relative">
-                <DollarSign className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-400" />
+                <IndianRupee className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-400" />
                 <input
                   {...register('budget', { 
                     valueAsNumber: true,

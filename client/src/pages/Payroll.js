@@ -6,7 +6,7 @@ import {
   Plus, 
   Edit, 
   Trash2, 
-  DollarSign,
+  IndianRupee,
   Calendar,
   CheckCircle,
   XCircle,
@@ -30,25 +30,12 @@ const Payroll = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const queryClient = useQueryClient();
 
-  // If not admin, block access to the payroll management page
-  if (!isAdmin) {
-    return (
-      <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-amber-50 via-orange-50 to-red-50">
-        <div className="bg-white rounded-2xl shadow-lg border border-amber-100 px-8 py-6 text-center">
-          <h1 className="text-xl font-semibold text-gray-900 mb-2">Access Restricted</h1>
-          <p className="text-gray-600 text-sm">
-            Only administrators can view and manage all payroll records.
-          </p>
-        </div>
-      </div>
-    );
-  }
-
   // Fetch payroll data (admin only)
   const { data: payrollData, isLoading } = useQuery(
     ['payroll', currentPage, searchTerm, statusFilter, monthFilter],
     () => getPayroll(currentPage, searchTerm, statusFilter, monthFilter),
     {
+      enabled: isAdmin,
       select: (data) => data || { payroll: [], total: 0, totalPages: 0, currentPage: 1 }
     }
   );
@@ -96,13 +83,27 @@ const Payroll = () => {
       case 'processing':
         return <AlertCircle className="h-4 w-4 text-blue-600" />;
       default:
-        return <DollarSign className="h-4 w-4 text-gray-600" />;
+        return <IndianRupee className="h-4 w-4 text-gray-600" />;
     }
   };
 
   const totalPayroll = payroll.reduce((sum, record) => sum + (record.netSalary || 0), 0);
   const paidAmount = payroll.filter(r => r.status === 'paid').reduce((sum, record) => sum + (record.netSalary || 0), 0);
   const pendingAmount = payroll.filter(r => r.status === 'pending').reduce((sum, record) => sum + (record.netSalary || 0), 0);
+
+  // If not admin, block access to the payroll management page (after hooks)
+  if (!isAdmin) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-amber-50 via-orange-50 to-red-50">
+        <div className="bg-white rounded-2xl shadow-lg border border-amber-100 px-8 py-6 text-center">
+          <h1 className="text-xl font-semibold text-gray-900 mb-2">Access Restricted</h1>
+          <p className="text-gray-600 text-sm">
+            Only administrators can view and manage all payroll records.
+          </p>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-amber-50 via-orange-50 to-red-50">
@@ -137,7 +138,7 @@ const Payroll = () => {
           <div className="bg-white/80 backdrop-blur-sm rounded-2xl p-6 shadow-lg border border-white/20">
             <div className="flex items-center">
               <div className="p-3 bg-green-100 rounded-xl">
-                <DollarSign className="h-6 w-6 text-green-600" />
+                <IndianRupee className="h-6 w-6 text-green-600" />
               </div>
               <div className="ml-4">
                 <p className="text-sm font-medium text-gray-600">Total Payroll</p>

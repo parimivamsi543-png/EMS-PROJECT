@@ -4,7 +4,7 @@ import { useQuery } from 'react-query';
 import { 
   Users, 
   Building2, 
-  DollarSign, 
+  IndianRupee, 
   TrendingUp, 
   Clock, 
   Calendar, 
@@ -95,7 +95,7 @@ const Dashboard = () => {
             <StatCard
               title="Average Salary"
               value={`₹${Math.round(stats?.avgSalary || 0).toLocaleString()}`}
-              icon={DollarSign}
+              icon={IndianRupee}
               color="bg-gradient-to-r from-yellow-500 to-yellow-600"
               change={1.8}
               gradient="bg-gradient-to-r from-yellow-50 to-yellow-100"
