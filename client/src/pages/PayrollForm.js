@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useForm } from 'react-hook-form';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useQueryClient, useQuery } from 'react-query';
-import { ArrowLeft, Save, DollarSign, User, CreditCard, Calculator } from 'lucide-react';
+import { ArrowLeft, Save, IndianRupee, User, CreditCard, Calculator } from 'lucide-react';
 import { getEmployees, getPayrollRecord, createPayroll, updatePayroll } from '../services/api';
 
 const PayrollForm = () => {
@@ -166,10 +166,10 @@ const PayrollForm = () => {
                 {/* Basic Salary */}
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Basic Salary
+                    Basic Salary (₹)
                   </label>
                   <div className="relative">
-                    <DollarSign className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" />
+                    <IndianRupee className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" />
                     <input
                       type="number"
                       step="0.01"
@@ -189,10 +189,10 @@ const PayrollForm = () => {
                 {/* Allowances */}
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Allowances
+                    Allowances (₹)
                   </label>
                   <div className="relative">
-                    <DollarSign className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" />
+                    <IndianRupee className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" />
                     <input
                       type="number"
                       step="0.01"
@@ -211,10 +211,10 @@ const PayrollForm = () => {
                 {/* Deductions */}
                 <div>
                   <label className="block text-sm font-medium text-gray-700 mb-2">
-                    Deductions
+                    Deductions (₹)
                   </label>
                   <div className="relative">
-                    <DollarSign className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" />
+                    <IndianRupee className="absolute left-3 top-1/2 transform -translate-y-1/2 h-5 w-5 text-gray-400" />
                     <input
                       type="number"
                       step="0.01"
