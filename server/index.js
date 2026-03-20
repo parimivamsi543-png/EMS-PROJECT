@@ -19,6 +19,11 @@ app.use(cors(corsOptions));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+// Simple health/info endpoint
+app.get('/', (req, res) => {
+  res.send('API is running 🚀');
+});
+
 // Connect to MongoDB
 mongoose.connect(process.env.MONGO_URI, {
   useNewUrlParser: true,
