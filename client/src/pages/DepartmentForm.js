@@ -136,13 +136,13 @@ const DepartmentForm = () => {
 
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-2">
-                Manager
+                HOD
               </label>
               <select
                 {...register('manager')}
                 className="w-full border border-gray-300 rounded-lg px-3 py-2 focus:outline-none focus:ring-2 focus:ring-primary-500"
               >
-                <option value="">Select a manager</option>
+                <option value="">Select HOD</option>
                 {employees?.employees?.map(employee => (
                   <option key={employee._id} value={employee._id}>
                     {employee.firstName} {employee.lastName} - {employee.position}
