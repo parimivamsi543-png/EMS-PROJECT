@@ -94,7 +94,7 @@ const Landing = () => {
               <span className="text-blue-600">Effortlessly</span>
             </h1>
             <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
-              The most comprehensive employee management system designed for modern businesses.
+              The most comprehensive employee management system designed for modern educational institutions.
               Streamline workforce processes, boost productivity, and make data-driven decisions.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -102,7 +102,7 @@ const Landing = () => {
                 to="/signup"
                 className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white text-lg font-medium rounded-lg hover:from-blue-700 hover:to-purple-700 transition-all duration-200 transform hover:scale-105 shadow-lg"
               >
-                Start Free Trial
+                Sign Up
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Link>
               <Link
@@ -203,7 +203,7 @@ const Landing = () => {
                 <span className="ml-2 text-xl font-bold">Employee Management</span>
               </div>
               <p className="text-gray-400">
-                The most comprehensive employee management system for modern businesses.
+                The most comprehensive employee management system for modern educational institutions.
               </p>
             </div>
             <div>
@@ -216,7 +216,7 @@ const Landing = () => {
               </ul>
             </div>
             <div>
-              <h3 className="text-lg font-semibold mb-4">Company</h3>
+              <h3 className="text-lg font-semibold mb-4">Institution</h3>
               <ul className="space-y-2 text-gray-400">
                 <li><a href="#" className="hover:text-white transition-colors">About</a></li>
                 <li><a href="#" className="hover:text-white transition-colors">Blog</a></li>
