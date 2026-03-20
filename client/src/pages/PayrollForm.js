@@ -257,11 +257,11 @@ const PayrollForm = () => {
                         </span>
                       </div>
                       <span className="text-lg font-bold text-amber-900">
-                        ${netSalary.toFixed(2)}
+                        ₹{netSalary.toFixed(2)}
                       </span>
                     </div>
                     <div className="mt-2 text-xs text-amber-700">
-                      Basic Salary: ${basicSalary.toFixed(2)} + Allowances: ${allowances.toFixed(2)} - Deductions: ${deductions.toFixed(2)}
+                      Basic Salary: ₹{basicSalary.toFixed(2)} + Allowances: ₹{allowances.toFixed(2)} - Deductions: ₹{deductions.toFixed(2)}
                     </div>
                   </div>
                 </div>

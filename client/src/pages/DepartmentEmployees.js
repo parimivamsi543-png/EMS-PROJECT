@@ -123,7 +123,7 @@ const DepartmentEmployees = () => {
                   {employee.salary && (
                     <div className="flex items-center text-sm text-gray-600">
                       <DollarSign className="h-4 w-4 mr-2 text-gray-400" />
-                      <span>${employee.salary.toLocaleString()}</span>
+                      <span>₹{employee.salary.toLocaleString()}</span>
                     </div>
                   )}
                   {employee.hireDate && (

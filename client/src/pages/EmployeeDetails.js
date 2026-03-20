@@ -137,7 +137,7 @@ const EmployeeDetails = () => {
                 <label className="block text-sm font-medium text-gray-500 mb-1">Salary</label>
                 <div className="flex items-center">
                   <DollarSign className="h-4 w-4 text-gray-400 mr-2" />
-                  <p className="text-sm text-gray-900">${employee.salary?.toLocaleString()}</p>
+                  <p className="text-sm text-gray-900">₹{employee.salary?.toLocaleString()}</p>
                 </div>
               </div>
               <div>
@@ -271,7 +271,7 @@ const EmployeeDetails = () => {
               <div className="flex justify-between">
                 <span className="text-sm text-gray-600">Salary</span>
                 <span className="text-sm font-medium text-gray-900">
-                  ${employee.salary?.toLocaleString()}
+                  ₹{employee.salary?.toLocaleString()}
                 </span>
               </div>
               <div className="flex justify-between">

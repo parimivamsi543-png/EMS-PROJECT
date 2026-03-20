@@ -125,7 +125,7 @@ const Payroll = () => {
               </div>
               <div className="ml-4">
                 <p className="text-sm font-medium text-gray-600">Total Payroll</p>
-                <p className="text-2xl font-bold text-gray-900">${totalPayroll.toLocaleString()}</p>
+                <p className="text-2xl font-bold text-gray-900">₹{totalPayroll.toLocaleString()}</p>
               </div>
             </div>
           </div>
@@ -137,7 +137,7 @@ const Payroll = () => {
               </div>
               <div className="ml-4">
                 <p className="text-sm font-medium text-gray-600">Paid Amount</p>
-                <p className="text-2xl font-bold text-gray-900">${paidAmount.toLocaleString()}</p>
+                <p className="text-2xl font-bold text-gray-900">₹{paidAmount.toLocaleString()}</p>
               </div>
             </div>
           </div>
@@ -149,7 +149,7 @@ const Payroll = () => {
               </div>
               <div className="ml-4">
                 <p className="text-sm font-medium text-gray-600">Pending Amount</p>
-                <p className="text-2xl font-bold text-gray-900">${pendingAmount.toLocaleString()}</p>
+                <p className="text-2xl font-bold text-gray-900">₹{pendingAmount.toLocaleString()}</p>
               </div>
             </div>
           </div>
@@ -161,7 +161,7 @@ const Payroll = () => {
               </div>
               <div className="ml-4">
                 <p className="text-sm font-medium text-gray-600">Avg. Salary</p>
-                <p className="text-2xl font-bold text-gray-900">${payroll.length > 0 ? Math.round(totalPayroll / payroll.length).toLocaleString() : '0'}</p>
+                <p className="text-2xl font-bold text-gray-900">₹{payroll.length > 0 ? Math.round(totalPayroll / payroll.length).toLocaleString() : '0'}</p>
               </div>
             </div>
           </div>
@@ -307,22 +307,22 @@ const Payroll = () => {
                         </td>
                         <td className="px-6 py-4 whitespace-nowrap">
                           <div className="text-sm text-gray-900">
-                            ${(record.basicSalary || 0).toLocaleString()}
+                            ₹{(record.basicSalary || 0).toLocaleString()}
                           </div>
                         </td>
                         <td className="px-6 py-4 whitespace-nowrap">
                           <div className="text-sm text-green-600">
-                            +${(record.allowances || 0).toLocaleString()}
+                            +₹{(record.allowances || 0).toLocaleString()}
                           </div>
                         </td>
                         <td className="px-6 py-4 whitespace-nowrap">
                           <div className="text-sm text-red-600">
-                            -${(record.deductions || 0).toLocaleString()}
+                            -₹{(record.deductions || 0).toLocaleString()}
                           </div>
                         </td>
                         <td className="px-6 py-4 whitespace-nowrap">
                           <div className="text-sm font-semibold text-gray-900">
-                            ${(record.netSalary || 0).toLocaleString()}
+                            ₹{(record.netSalary || 0).toLocaleString()}
                           </div>
                         </td>
                         <td className="px-6 py-4 whitespace-nowrap">

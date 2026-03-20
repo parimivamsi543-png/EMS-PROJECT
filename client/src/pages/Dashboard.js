@@ -94,7 +94,7 @@ const Dashboard = () => {
             />
             <StatCard
               title="Average Salary"
-              value={`$${Math.round(stats?.avgSalary || 0).toLocaleString()}`}
+              value={`₹${Math.round(stats?.avgSalary || 0).toLocaleString()}`}
               icon={DollarSign}
               color="bg-gradient-to-r from-yellow-500 to-yellow-600"
               change={1.8}
@@ -122,7 +122,7 @@ const Dashboard = () => {
             />
             <StatCard
               title="Salary This Month"
-              value="$45,600"
+              value="₹45,600"
               icon={CreditCard}
               color="bg-gradient-to-r from-amber-500 to-amber-600"
               change={2.8}

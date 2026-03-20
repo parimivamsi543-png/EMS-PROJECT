@@ -166,7 +166,7 @@ const Profile = () => {
                   <div>
                     <p className="text-sm font-medium text-gray-500">Salary</p>
                     <p className="text-base text-gray-900">
-                      {employee.salary ? `$${employee.salary.toLocaleString()}` : 'N/A'}
+                      {employee.salary ? `₹${employee.salary.toLocaleString()}` : 'N/A'}
                     </p>
                   </div>
                 </div>
