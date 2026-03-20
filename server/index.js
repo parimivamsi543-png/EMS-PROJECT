@@ -19,9 +19,6 @@ app.use(cors(corsOptions));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// Serve static files from React build
-app.use(express.static(path.join(__dirname, '../client/build')));
-
 // Connect to MongoDB
 mongoose.connect(process.env.MONGO_URI, {
   useNewUrlParser: true,
@@ -37,11 +34,6 @@ app.use('/api/departments', require('./routes/departments'));
 app.use('/api/payroll', require('./routes/payroll'));
 app.use('/api/leaves', require('./routes/leaves'));
 app.use('/api/attendance', require('./routes/attendance'));
-
-// Serve React app for all other routes
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, '../client/build', 'index.html'));
-});
 
 // Error handling middleware
 app.use((err, req, res, next) => {
