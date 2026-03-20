@@ -211,7 +211,7 @@ const EmployeeForm = () => {
         {/* Job Information */}
         <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
           <div className="flex items-center mb-6">
-            <DollarSign className="h-5 w-5 text-primary-600 mr-2" />
+            <IndianRupee className="h-5 w-5 text-primary-600 mr-2" />
             <h2 className="text-lg font-medium text-gray-900">Job Information</h2>
           </div>
           
