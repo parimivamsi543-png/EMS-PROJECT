@@ -96,7 +96,7 @@ npm install
 Create a `.env` file in the server directory:
 ```env
 PORT=5000
-MONGODB_URI=mongodb://localhost:27017/employee_management
+ MONGO_URI=your_mongodb_connection_string
 NODE_ENV=development
 ```
 
@@ -107,7 +107,7 @@ Make sure MongoDB is running on your system:
 mongod
 
 # Or use MongoDB Atlas (cloud)
-# Update MONGODB_URI in .env file
+# Update MONGO_URI in .env file
 ```
 
 ### 5. Start the Application
@@ -131,8 +131,8 @@ npm start
 ```
 
 ### 6. Access the Application
-- **Frontend**: http://localhost:3000
-- **Backend API**: http://localhost:5000/api
+- **Frontend**: https://your-frontend-url
+- **Backend API**: https://your-backend-url/api
 
 ## 📁 Project Structure
 
@@ -207,7 +207,7 @@ npm run build
 ### Backend Deployment (Heroku/Railway)
 1. Set environment variables:
 ```env
-MONGODB_URI=your_mongodb_connection_string
+MONGO_URI=your_mongodb_connection_string
 NODE_ENV=production
 ```
 
@@ -310,6 +310,8 @@ If you encounter any issues or have questions:
 ---
 
 **Built with ❤️ using modern web technologies**
-#   E M S  
- #   E M S  
+#   E M S 
+ 
+ #   E M S 
+ 
  "# EMS" 
