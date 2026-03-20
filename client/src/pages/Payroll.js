@@ -20,15 +20,31 @@ import {
   TrendingUp
 } from 'lucide-react';
 import { getPayroll, deletePayroll } from '../services/api';
+import { useAuth } from '../contexts/AuthContext';
 
 const Payroll = () => {
+  const { isAdmin } = useAuth();
   const [searchTerm, setSearchTerm] = useState('');
   const [statusFilter, setStatusFilter] = useState('');
   const [monthFilter, setMonthFilter] = useState('');
   const [currentPage, setCurrentPage] = useState(1);
   const queryClient = useQueryClient();
 
-  // Fetch payroll data
+  // If not admin, block access to the payroll management page
+  if (!isAdmin) {
+    return (
+      <div className="min-h-screen flex items-center justify-center bg-gradient-to-br from-amber-50 via-orange-50 to-red-50">
+        <div className="bg-white rounded-2xl shadow-lg border border-amber-100 px-8 py-6 text-center">
+          <h1 className="text-xl font-semibold text-gray-900 mb-2">Access Restricted</h1>
+          <p className="text-gray-600 text-sm">
+            Only administrators can view and manage all payroll records.
+          </p>
+        </div>
+      </div>
+    );
+  }
+
+  // Fetch payroll data (admin only)
   const { data: payrollData, isLoading } = useQuery(
     ['payroll', currentPage, searchTerm, statusFilter, monthFilter],
     () => getPayroll(currentPage, searchTerm, statusFilter, monthFilter),

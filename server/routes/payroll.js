@@ -3,9 +3,13 @@ const router = express.Router();
 const Payroll = require('../models/Payroll');
 const Employee = require('../models/Employee');
 const { body, validationResult } = require('express-validator');
+const { authenticate, authorize } = require('../middleware/auth');
 
-// Get all payroll records with pagination and search
-router.get('/', async (req, res) => {
+// All payroll routes require authentication
+router.use(authenticate);
+
+// Get all payroll records with pagination and search (admin only)
+router.get('/', authorize('admin'), async (req, res) => {
   try {
     const page = parseInt(req.query.page) || 1;
     const limit = parseInt(req.query.limit) || 10;
@@ -65,6 +69,14 @@ router.get('/:id', async (req, res) => {
     if (!payroll) {
       return res.status(404).json({ message: 'Payroll record not found' });
     }
+
+    // Employees can only see their own payroll record
+    if (req.user.role !== 'admin') {
+      const userEmployeeId = req.user.employeeId?._id?.toString();
+      if (!userEmployeeId || payroll.employeeId?.toString() !== userEmployeeId) {
+        return res.status(403).json({ message: 'Access denied. You can only view your own salary record.' });
+      }
+    }
     
     res.json(payroll);
   } catch (error) {
@@ -72,8 +84,8 @@ router.get('/:id', async (req, res) => {
   }
 });
 
-// Create new payroll record
-router.post('/', [
+// Create new payroll record (admin only)
+router.post('/', authorize('admin'), [
   body('employeeId').notEmpty().withMessage('Employee ID is required'),
   body('basicSalary').isFloat({ min: 0 }).withMessage('Basic salary must be a positive number'),
   body('allowances').optional().isFloat({ min: 0 }).withMessage('Allowances must be a positive number'),
@@ -119,8 +131,8 @@ router.post('/', [
   }
 });
 
-// Update payroll record
-router.put('/:id', [
+// Update payroll record (admin only)
+router.put('/:id', authorize('admin'), [
   body('basicSalary').optional().isFloat({ min: 0 }).withMessage('Basic salary must be a positive number'),
   body('allowances').optional().isFloat({ min: 0 }).withMessage('Allowances must be a positive number'),
   body('deductions').optional().isFloat({ min: 0 }).withMessage('Deductions must be a positive number'),
@@ -159,8 +171,8 @@ router.put('/:id', [
   }
 });
 
-// Delete payroll record
-router.delete('/:id', async (req, res) => {
+// Delete payroll record (admin only)
+router.delete('/:id', authorize('admin'), async (req, res) => {
   try {
     const payroll = await Payroll.findByIdAndDelete(req.params.id);
     

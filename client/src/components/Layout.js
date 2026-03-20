@@ -19,7 +19,7 @@ import { useAuth } from '../contexts/AuthContext';
 const Layout = ({ children }) => {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const location = useLocation();
-  const { user, signOut } = useAuth();
+  const { user, signOut, isAdmin } = useAuth();
 
   const navigation = [
     { name: 'Dashboard', href: '/dashboard', icon: BarChart3 },
@@ -27,7 +27,8 @@ const Layout = ({ children }) => {
     { name: 'Departments', href: '/departments', icon: Building2 },
     { name: 'Attendance', href: '/attendance', icon: Clock },
     { name: 'Leaves', href: '/leaves', icon: Calendar },
-    { name: 'Salary', href: '/payroll', icon: CreditCard },
+    // Salary management is admin-only
+    ...(isAdmin ? [{ name: 'Salary', href: '/payroll', icon: CreditCard }] : []),
   ];
 
   const isActive = (path) => {
