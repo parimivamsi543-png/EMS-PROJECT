@@ -2,7 +2,7 @@ import React, { useEffect } from 'react';
 import { useForm } from 'react-hook-form';
 import { useNavigate, useParams } from 'react-router-dom';
 import { useQuery, useMutation, useQueryClient } from 'react-query';
-import { ArrowLeft, Save, User, Mail, Phone, MapPin, DollarSign } from 'lucide-react';
+import { ArrowLeft, Save, User, Mail, Phone, MapPin, IndianRupee } from 'lucide-react';
 import { getEmployee, createEmployee, updateEmployee } from '../services/api';
 
 const EmployeeForm = () => {
@@ -236,10 +236,10 @@ const EmployeeForm = () => {
 
             <div>
               <label className="block text-sm font-medium text-gray-700 mb-2">
-                Salary *
+                Salary (₹) *
               </label>
               <div className="relative">
-                <DollarSign className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-400" />
+                <IndianRupee className="absolute left-3 top-1/2 transform -translate-y-1/2 h-4 w-4 text-gray-400" />
                 <input
                   {...register('salary', { 
                     required: 'Salary is required',
